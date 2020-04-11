@@ -11,7 +11,7 @@ node('UBUNTU') {
     stage('archivetestresults') {
         junit 'target/surefire-reports/*.xml'
     }
-    stage("deployment') {
+    stage('deployment') {
         sh 'docker image build -t petclinic /home/jenkins/images/spring-petclinic
         sh 'docker container run -d -p 8081:8080 petclinic
     }
