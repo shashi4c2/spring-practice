@@ -1,4 +1,4 @@
-node('UBUNTU') {
+node('master') {
     stage('GIT') {
         git 'https://github.com/shashi4c2/spring-practice.git'
     }
@@ -10,9 +10,5 @@ node('UBUNTU') {
     }
     stage('archivetestresults') {
         junit 'target/surefire-reports/*.xml'
-    }
-    stage('deployment') {
-        sh 'docker image build -t petclinic /home/jenkins/images/spring'
-        sh 'docker container run -d -p 8081:8080 petclinic'
     }
 }
