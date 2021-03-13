@@ -12,6 +12,6 @@ node('master') {
         junit 'target/surefire-reports/*.xml'
     }
     stage('copyjarfile') {
-        sh 'scp target/*.jar -i /home/ubuntu/winshashi.pem ubuntu@13.233.149.170:/home/ubuntu/'
+        sh 'cp target/*.jar -i /home/ubuntu/winshashi.pem ubuntu@13.233.149.170:/home/ubuntu/'
     }
 }
