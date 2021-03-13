@@ -11,7 +11,4 @@ node('master') {
     stage('archivetestresults') {
         junit 'target/surefire-reports/*.xml'
     }
-    stage('copyjarfile') {
-        sh 'scp target/*.jar  ubuntu@13.233.149.170:/home/ubuntu/'
-    }
 }
