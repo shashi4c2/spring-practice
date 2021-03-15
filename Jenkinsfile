@@ -12,6 +12,6 @@ node('master') {
         junit 'target/surefire-reports/*.xml'
     }
     stage('copyfiles') {
-        sh 'scp target/*.jar 13.232.13.168:/home/ubuntu
+        sh 'scp target/*.jar 13.232.13.168:/home/ubuntu'
     }
 }
