@@ -12,6 +12,6 @@ node('master') {
         junit 'target/surefire-reports/*.xml'
     }
     stage('copyfiles') {
-        sh 'scp target/*.jar ssh ansible@10.0.0.73:/home/ansible'
+        sh 'scp "ForwardAgent=yes" target/*.jar ssh ansible@10.0.0.73:/home/ansible'
     }
 }
